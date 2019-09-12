@@ -1,9 +1,9 @@
 const express = require ('express');
-const scrapper = require ('./searcher')
+const scrapper = require ('./searchNow')
 const app = express();
 
-app.get('/search/:title', (req, res)=>{
-    scrapper.searchMovies(req.params.title)
+app.get('/:title', (req, res)=>{
+    scrapper.searchMoviesNow(req.params.title)
     .then(movies =>{
         res.json(movies);
     })
